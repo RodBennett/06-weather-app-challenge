@@ -61,7 +61,7 @@
     }
 
     .uv-low {
-        green
+        background: green;
     }
   .fiveday-container {
     flex: 1 1;
