@@ -83,9 +83,13 @@ function fiveDayWeather(lat, lon, name) {
       tempEl.textContent = `Current temperature: ${temp}°F`
       windEl.textContent = `Wind Speed: ${windSpeed} MPH`
       humidityEl.textContent = `Humidity: ${humidity}%`
-      uviIndexEl.textContent = `UVI: ${uvi}`
       cityNameEl.textContent = `(${today}) ${name}`
       iconEl.setAttribute('src', iconURL)
+
+      // code for changing UVI background colors
+    uviIndexEl.textContent = `UVI: ${uvi}`
+    //    let currentUvi = parseInt(data.curent.uvi)
+       
 
       //5 day forecast variables for data DOM
       let day1 = data.daily[1]

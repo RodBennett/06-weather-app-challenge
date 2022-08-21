@@ -50,7 +50,19 @@
       margin-left: 30px;
       font-size:xx-large;
     }
+    #uv-index {
+        color: black;
+        width: 60px;
+        background: red;
+    }
 
+    .uv-high {
+        background: red;
+    }
+
+    .uv-low {
+        green
+    }
   .fiveday-container {
     flex: 1 1;
     margin: auto;
