@@ -1,6 +1,6 @@
 # Challenge 6: Weather App Challenge
 
-Deployment Link: https://rodbennett.github.io/06-weather-app/
+[Deployment Link](
 
 In this assignment, I created a weather app to search for 5-days forecasts.
 
