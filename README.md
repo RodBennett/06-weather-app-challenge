@@ -38,7 +38,7 @@ THEN I am again presented with current and future conditions for that city
 
 This app features a number of JavaScript methods and functions that were new to us in coding bootcamp.  The first and foremost of these was the fetch() method for retrieving data from a 3rd-party API.  This app also features dynamically rendered elements such as buttons when ceratin cities are searched, local storage functionality, as well as clearing local storage functionality.
 
-## Static Sceenshots
+## Static Screenshots
 
 - ### Homepage
 
