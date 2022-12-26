@@ -6,7 +6,7 @@
 
 In this coding bootcamp assignment, I created a weather forecast app with the Open Weather 3rd-party API to search for 5-day forecasts everywhere around the world. 
 
-### [Github Pages Deployment Link](https://rodbennett.github.io/06-weather-app/)
+### [Github Pages Deployment Link](https://rodbennett.github.io/06-weather-app-challenge/)
 
 ## Table of Contents
 1. [Acceptance Criteria](#acceptance-criteria)
@@ -36,25 +36,23 @@ THEN I am again presented with current and future conditions for that city
 
 ## Features
 
-This app features a number of JavaScript methods and functions that were new to us in coding bootcamp.  The first and foremost of these was the fetch() method for retrieving data from a 3rd-party API.  This app also features dynamically rendered elements such as buttons when ceratin cities are searched, local storage functionality, as well as clearing local storage functionality.
+This app features a number of JavaScript methods and functions that were new to us in coding bootcamp.  The first and foremost of these was the fetch() method for retrieving data from a 3rd-party API.  This app also features dynamically rendered elements such as buttons when ceratin cities are searched, local storage functionality, as well as clearing local storage functionality. 
+
+This app is also media queried for mobile use.
 
 ## Static Screenshots
 
 - ### Homepage
 
-<img width="1044" alt="Screen Shot 2022-08-02 at 10 16 01 PM" src="https://user-images.githubusercontent.com/106923428/182525552-f25c7a71-2b29-4001-b920-c50b8faef860.png">
+<img width="1279" alt="homepage" src="./assets/images/main.png">
 
 - ### 5-day forecast cards  
 
-<img width="1279" alt="Screen Shot 2022-08-02 at 10 41 52 PM" src="https://user-images.githubusercontent.com/106923428/182525744-1589570c-a2b8-41af-ac37-9439747246f1.png">
+<img width="1279" alt="homepage" src="./assets/images/searched.png">
 
 - ### Searched city buttons column
 
-<img width="231" alt="Screen Shot 2022-08-02 at 10 17 07 PM" src="https://user-images.githubusercontent.com/106923428/182524992-e1a2fdff-d98b-4fc5-b523-023a3d1dbe48.png">
-
-- ### Clear search items button
-
-<img width="1277" alt="Screen Shot 2022-08-02 at 10 16 43 PM" src="https://user-images.githubusercontent.com/106923428/182524961-aaae47d0-574b-4e8d-b389-b4d6d8119ec4.png">
+<img width="250" alt="buttons" src="./assets/images/city-buttons.png">
 
 ## Technologies
 
@@ -75,8 +73,7 @@ This was definitely a challenging assignment, but my understanding of JavaScript
 ## Future Enhancements
 
 1. Use customized icons
-2. Add media queries for mobile responsiveness
-3. Have UVI dynamically colored according to value (parseInt())
+2. Have UVI dynamically colored according to value (parseInt())
 
 ## License
 
