@@ -210,6 +210,11 @@ p {
     background-image: url('./images/ibrahim-rifath-JgOlXp0Dlpc-unsplash\ \(1\).jpg');
 
   }
+  .hero {
+    font-size: smaller;
+    padding: 5px;
+  }
+
 .search-card{
 width: 75%;
   }
@@ -268,10 +273,6 @@ width: 75%;
 
   p {
     font-size: 0.8rem;
-  }
-
-  .hero {
-    font-size: smaller;
   }
 
   .results-container{
