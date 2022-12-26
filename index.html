@@ -23,39 +23,41 @@
     <aside>
       <div class="search-card">
         <form id="search-form">
-          <label class="form-label" for="City">City</label>
+          <label class="form-label" id="city"for="City">City</label>
           <input name="username" id="city-search" type="text" autofocus="true" class="form-input"
             placeholder="Enter city here" />
           <button type="submit" class="btn submit-btn">Find City</button>
+          <button class="btn clear-btn hide">Clear Search Items</button>
+
         </form>
-      </div>
-      <section class="card-header">Searched Cities</h3>
+      
+      <section class="card-header">Searched Cities
         <div class="card-body">
           <!-- <button data-city="searched" class="btn city-button">test</button> -->
         </div>
+      </div>
       </section>
     </aside>
 
     <!-- Empty HTML element to write weather data to in middle of page. -->
     <section class="results-container">
       <div class="current-conditions">
-      <header>
-        <h1><span id="city-name">Enter City For 5-Day Weather Forecast</span></h1>
-      </header>
-      <div class="current-text">
-      <img id="icon" src="">
-      <p id="temp"></p>
-      <p id="wind"></p>
-      <p id="humidity"></p>
-      <p id="uv-index"></p>
-      </div>
-    </div>
-      <!-- 5 day weather cards-->
-      <div class="fiveday-container">
+        <header>
+          <h2><span id="city-name">Enter City For 5-Day Weather Forecast</span></h2>
+        </header>
+        <div class="current-text">
+          <p id="uv-index"></p>
+          <p id="temp"></p>
+          <p id="wind"></p>
+          <p id="humidity"></p>
+          <img id="icon" src="">
+        </div>
+
+          <!-- 5 day weather cards-->
+          <div class="fiveday-container">
+        </div>
     </section>
-    <button class="btn clear-btn hide">Clear Search Items</button>
   </main>
   <script src="./assets/script.js"></script>
 </body>
-
 </html>
