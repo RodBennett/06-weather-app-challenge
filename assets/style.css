@@ -298,7 +298,7 @@ p {
   }
 
   .weather-card {
-    width: 60%;
+    width: 70%;
     margin: 0;
     margin-bottom: 10px;
     margin-top: 20px;
@@ -310,8 +310,13 @@ p {
     padding: 10px;
   }
 
+  .date{
+    font-size: .9rem
+  }
+
   .weather-card img {
     margin-top: 0px;
+    height: 75px;
   }
 
   .text-box {
