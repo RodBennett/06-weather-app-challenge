@@ -87,8 +87,22 @@ function fiveDayWeather(lat, lon, name) {
       iconEl.setAttribute('src', iconURL)
 
       // code for changing UVI background colors
+      //call function for uvi : uviColors (uvi, uviCode); /////// SEE LINE 175
     uviIndexEl.textContent = `UVI: ${uvi}`
-    //    let currentUvi = parseInt(data.curent.uvi)
+    // uviColors(uvi)
+
+    // function uviColors(uviColor) {
+//   //conditional to help us determine which class its going to add specifically depending on the uvi number 
+//     if (uviIndexEl <= 2 ) {
+//         uvi.classList.add("uvi-low");   
+//     } else if (uvi <= 5) {
+//         uviCode.classList.add("uviCodeModerate");   
+//     } else if (uvi <= 8) {
+//         uviCode.classList.add("uviCodeHigh");   
+//     } else if (uvi > 8) {
+//         uviCode.classList.add("uviCodeVeryHigh");   
+//     }
+// }
        
 
       //5 day forecast variables for data DOM
@@ -111,7 +125,8 @@ function fiveDayWeather(lat, lon, name) {
         fiveDayContainer.append(cardContainers)
 
         // create element for date within cards
-        const futureDates = moment(futureDays[index].dt * 1000).format('dddd, MMM Do')
+        const futureDates = moment(futureDays[index].dt * 1000).format('ddd, MMM Do')
+        cardContainers.classList.add('date')
         cardContainers.append(futureDates)
 
         // create element for icons for 5 day cards
@@ -122,7 +137,8 @@ function fiveDayWeather(lat, lon, name) {
 
         // create text elements for specific items inside of cards
         let fiveDayTemp = futureDays[index].temp.day
-        let tempText = document.createElement('h4')
+        let tempText = document.createElement('p')
+        tempText.classList.add('contents')
         tempText.textContent = `Temp: ${fiveDayTemp}°F`
         const textBox = document.createElement('div')
         textBox.classList.add('text-box')
@@ -130,12 +146,14 @@ function fiveDayWeather(lat, lon, name) {
         textBox.append(tempText)
 
         let fiveDayWind = futureDays[index].wind_speed
-        let windText = document.createElement('h4')
+        let windText = document.createElement('p')
+        windText.classList.add('contents')
         windText.textContent = `Wind: ${fiveDayWind} MPH`
         textBox.append(windText)
 
         let fiveDayHumidity = futureDays[index].humidity
-        let humidityText = document.createElement('h4')
+        let humidityText = document.createElement('p')
+        humidityText.classList.add('contents')
         humidityText.textContent = `Humidity: ${fiveDayHumidity}%`
         textBox.append(humidityText)
       }
