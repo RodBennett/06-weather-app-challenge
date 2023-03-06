@@ -49,12 +49,20 @@ aside {
   font-size: xx-large;
 }
 
+.uv-veryhigh {
+  background: rgb(218, 39, 218)
+}
+
 .uv-high {
   background: red;
 }
 
+.uv-moderate {
+  background: rgba(251, 251, 1, 0.881);
+}
+
 .uv-low {
-  background: green;
+  background: rgb(17, 209, 17);
 }
 
 

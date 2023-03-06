@@ -89,22 +89,8 @@ function fiveDayWeather(lat, lon, name) {
       // code for changing UVI background colors
       //call function for uvi : uviColors (uvi, uviCode); /////// SEE LINE 175
     uviIndexEl.textContent = `UVI: ${uvi}`
-    // uviColors(uvi)
-
-    // function uviColors(uviColor) {
-//   //conditional to help us determine which class its going to add specifically depending on the uvi number 
-//     if (uviIndexEl <= 2 ) {
-//         uvi.classList.add("uvi-low");   
-//     } else if (uvi <= 5) {
-//         uviCode.classList.add("uviCodeModerate");   
-//     } else if (uvi <= 8) {
-//         uviCode.classList.add("uviCodeHigh");   
-//     } else if (uvi > 8) {
-//         uviCode.classList.add("uviCodeVeryHigh");   
-//     }
-// }
+    uviColors(uvi)
        
-
       //5 day forecast variables for data DOM
       let day1 = data.daily[1]
       let day2 = data.daily[2]
@@ -159,6 +145,20 @@ function fiveDayWeather(lat, lon, name) {
       }
     })
 }
+
+function uviColors(uviColor) {
+  const number = parseFloat(uviColor).toFixed(2)
+  // console.log(number.toFixed(2))
+  if(number <= 2) {
+    uviIndexEl.classList.add("uv-low")
+   } else if(number <= 6) {
+    uviIndexEl.classList.add("uv-moderate")
+  } else if (number <= 8){
+    uviIndexEl.classList.add("uv-high")
+  } else {
+  uviIndexEl.classList.add("uv-veryhigh")
+}
+}
 // creating searched city buttons and linking past searches to them
 function retrieveLocalStorage() {
   var searchedCity = JSON.parse(localStorage.getItem('searchedCity')) || []
@@ -171,7 +171,6 @@ function retrieveLocalStorage() {
     cityButton.setAttribute('data-lon', searchedCity[index][2])
     cityButton.addEventListener('click', cityButtons)
     searchContainer.append(cityButton)
-
   }
 }
 
