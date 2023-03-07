@@ -150,15 +150,15 @@ function fiveDayWeather(lat, lon, name) {
 
 function uviColors(uviValue) {
   const uvi = parseFloat(uviValue).toFixed(2)
-  // console.log(number.toFixed(2))
-  if(uvi <= 2) {
-    uviIndexEl.classList.add("uv-low")
-   } else if(uvi <= 6) {
-    uviIndexEl.classList.add("uv-moderate")
-  } else if (uvi <= 8){
+  // console.log(uviValue.toFixed(2))
+  if(uvi >= 8) {
+    uviIndexEl.classList.add("uv-veryhigh")
+  } else if(uvi < 8 && uvi > 6) {
     uviIndexEl.classList.add("uv-high")
-  } else {
-  uviIndexEl.classList.add("uv-veryhigh")
+  } else if (uvi < 6 && uvi > 2) {
+    uviIndexEl.classList.add("uv-moderate")
+  } else if (uvi <= 2) {
+  uviIndexEl.classList.add("uv-low")
 }
 }
 
