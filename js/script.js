@@ -153,10 +153,16 @@ function uviColors(uviValue) {
   // console.log(uviValue.toFixed(2))
   if(uvi >= 8) {
     uviIndexEl.classList.add("uv-veryhigh")
-  } else if(uvi < 8 && uvi > 6) {
+    uviIndexEl.classList.remove("uv-low", "uv-moderate", "uv-high")
+
+  } else if(uvi > 6 && uvi < 8) {
     uviIndexEl.classList.add("uv-high")
-  } else if (uvi < 6 && uvi > 2) {
+    uviIndexEl.classList.remove("uv-low", "uv-moderate", "uv-veryhigh")
+
+  } else if (uvi > 2 && uvi < 6) {
     uviIndexEl.classList.add("uv-moderate")
+    uviIndexEl.classList.remove("uv-low", "uv-high", "uv-veryhigh")
+
   } else if (uvi <= 2) {
   uviIndexEl.classList.add("uv-low")
 }
