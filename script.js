@@ -41,6 +41,7 @@ function submitHandler(event) {
       const name = data[0].name;
       const lat = data[0].lat;
       const lon = data[0].lon;
+  
 
       //new search button apprears at bottom of page
       newSearchBtnEl.classList.remove('hide')
@@ -63,6 +64,7 @@ function submitHandler(event) {
 
       // call for five day weather data
       fiveDayWeather(lat, lon, name)
+
     })
 }
 
@@ -77,6 +79,10 @@ function fiveDayWeather(lat, lon, name) {
       const humidity = data.current.humidity
       const windSpeed = data.current.wind_speed
       const uvi = data.current.uvi
+
+        // call uviColors function for color coded uvi values
+      uviColors(uvi)
+
       const icon = data.current.weather[0].icon
       const iconURL = `https://openweathermap.org/img/wn/${icon}@2x.png`
 
@@ -86,10 +92,7 @@ function fiveDayWeather(lat, lon, name) {
       cityNameEl.textContent = `(${today}) ${name}`
       iconEl.setAttribute('src', iconURL)
 
-      // code for changing UVI background colors
-      //call function for uvi : uviColors (uvi, uviCode); /////// SEE LINE 175
-    uviIndexEl.textContent = `UVI: ${uvi}`
-    uviColors(uvi)
+      uviIndexEl.textContent = `UVI: ${uvi}`
        
       //5 day forecast variables for data DOM
       let day1 = data.daily[1]
@@ -104,7 +107,6 @@ function fiveDayWeather(lat, lon, name) {
 
       // loop for all weather data for each card
       for (let index = 0; index < futureDays.length; index++) {
-
         //create card containters within loop to go inside larger 5 day container hard-coded into HTML
         const cardContainers = document.createElement('div')
         cardContainers.classList.add('weather-card')
@@ -146,19 +148,20 @@ function fiveDayWeather(lat, lon, name) {
     })
 }
 
-function uviColors(uviColor) {
-  const number = parseFloat(uviColor).toFixed(2)
+function uviColors(uviValue) {
+  const uvi = parseFloat(uviValue).toFixed(2)
   // console.log(number.toFixed(2))
-  if(number <= 2) {
+  if(uvi <= 2) {
     uviIndexEl.classList.add("uv-low")
-   } else if(number <= 6) {
+   } else if(uvi <= 6) {
     uviIndexEl.classList.add("uv-moderate")
-  } else if (number <= 8){
+  } else if (uvi <= 8){
     uviIndexEl.classList.add("uv-high")
   } else {
   uviIndexEl.classList.add("uv-veryhigh")
 }
 }
+
 // creating searched city buttons and linking past searches to them
 function retrieveLocalStorage() {
   var searchedCity = JSON.parse(localStorage.getItem('searchedCity')) || []
