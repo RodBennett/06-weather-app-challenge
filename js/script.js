@@ -64,9 +64,10 @@ function submitHandler(event) {
 
       // call for five day weather data
       fiveDayWeather(lat, lon, name)
-
     })
+
 }
+
 
 // function for calling lat/long and pairing them with names of different cities, and presenting data
 function fiveDayWeather(lat, lon, name) {
@@ -78,7 +79,7 @@ function fiveDayWeather(lat, lon, name) {
       const temp = data.current.temp
       const humidity = data.current.humidity
       const windSpeed = data.current.wind_speed
-      const uvi = data.current.uvi
+      const uvi = data.current.uvi.toFixed(2)
 
         // call uviColors function for color coded uvi values
       uviColors(uvi)
@@ -149,13 +150,12 @@ function fiveDayWeather(lat, lon, name) {
 }
 
 function uviColors(uviValue) {
-  const uvi = parseFloat(uviValue).toFixed(2)
-  // console.log(uviValue.toFixed(2))
-  if(uvi >= 8) {
+  const uvi = parseFloat(uviValue)
+  if(uvi >= 10) {
     uviIndexEl.classList.add("uv-veryhigh")
     uviIndexEl.classList.remove("uv-low", "uv-moderate", "uv-high")
 
-  } else if(uvi > 6 && uvi < 8) {
+  } else if(uvi > 6 && uvi < 10) {
     uviIndexEl.classList.add("uv-high")
     uviIndexEl.classList.remove("uv-low", "uv-moderate", "uv-veryhigh")
 
